@@ -13,6 +13,7 @@ A discovery-first workflow for safely and correctly querying RushDB.
 
 - **RushDB MCP server** must be connected — it provides `getSchemaMarkdown`, `findRecords`, and all other tools used in this skill. Setup: `npx @rushdb/mcp-server` (requires `RUSHDB_API_KEY` env var). See https://docs.rushdb.com/mcp-server/quickstart
 - If the MCP tools are not available in the current session, tell the user the MCP server is not configured and link them to the quickstart above.
+- The server runs against **RushDB Cloud** (`RUSHDB_API_KEY`) or a **standalone engine** (`RUSHDB_MODE=direct` with `RUSHDB_ENGINE_URL` and `RUSHDB_ENGINE_TOKEN`). Use only the tools it lists. Against a standalone engine `smartSearch` and the relationship-pattern tools are not listed, `vectorSearch` needs a `queryVector` (a text `query` needs RushDB Cloud's managed embeddings), and only external embedding indexes can be created. Everything else in this skill works the same. If the user asks for a Cloud-only feature, say it needs RushDB Cloud instead of trying a workaround.
 
 ---
 
@@ -117,7 +118,7 @@ findRecords({
 | `findRelationships` | Inspect relationships; `where` filters edge type/properties, `source`/`target` filter endpoint records; no aggregate/groupBy |
 | `propertyValues`    | List distinct values for a property (needs `propertyId` from `getSchema` or `findProperties`)                                |
 
-> **Semantic search:** Properties listed in `getSchema` with a non-empty `vectorIndexes` array are eligible. Use `vectorSearch` with the matching `propertyName` and `labels`; `semanticSearch` is only a deprecated compatibility alias.
+> **Semantic search:** Properties listed in `getSchema` with a non-empty `vectorIndexes` array are eligible. Use `vectorSearch` with the index's `name` as `index` (or the matching `propertyName` and `labels`); `semanticSearch` is only a deprecated compatibility alias.
 
 ### Querying
 
@@ -128,7 +129,7 @@ findRecords({
 | `findUniqRecord`  | Return exactly one record (errors if multiple match)                                                   |
 | `getRecord`       | Fetch a single record by ID                                                                            |
 | `getRecordsByIds` | Fetch multiple records by IDs                                                                          |
-| `vectorSearch`    | Direct semantic retrieval over one indexed property; `where` activates exact prefilter mode            |
+| `vectorSearch`    | Direct semantic retrieval over one indexed property; `where` filters before ranking, `scoreThreshold` drops weak hits |
 | `exportRecords`   | Use only when the user explicitly asks for CSV export/download; do not substitute it for `findRecords` |
 
 ### Mutations (confirm before use)

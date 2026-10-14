@@ -1,6 +1,6 @@
 # RushDB SearchQuery — Complete Reference
 
-> Ported from `packages/mcp-server/searchQuerySpec.ts`. Load this file before calling `findRecords` with dates, aggregation, groupBy, relationship traversal, or vector search.
+> Ported from `searchQuerySpec.ts` in the `rush-db/mcp-server` repo. Load this file before calling `findRecords` with dates, aggregation, groupBy, relationship traversal, or vector search.
 
 ---
 
@@ -304,7 +304,7 @@ where: {
 Use for hierarchies ("any ancestor/descendant", "whole reporting chain"), "within N degrees", or transitive closure over one relationship type. The endpoint label constrains only the **final** record; intermediates are unconstrained.
 
 - Keep `max` as small as the request allows; deep undirected traversal is expensive. Omit `type` only when the user genuinely means "any relationship"; keep `direction` when the schema gives one.
-- Always set `hops.max` (an integer as small as the request allows). Omitting `max` means unbounded traversal, which is rejected on shared cloud connections and only accepted on self-hosted / dedicated-database setups; `hops.max` is capped per deployment (default 10).
+- Always set `hops.max` (an integer as small as the request allows). Omitting `max` means up to 10 hops (the engine default); RushDB Cloud also caps `hops.max` per deployment (default 10).
 - Endpoint aggregations apply per **path**: `$count`/`$collect` deduplicate, but `$sum`/`$avg` over a multihop alias count one row per path — prefer counting to summing across multihop endpoints.
 - One hop stays the default: never add `hops` for a plain related-record condition.
 

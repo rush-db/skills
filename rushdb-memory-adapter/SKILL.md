@@ -20,6 +20,7 @@ Identify:
 - host-provided agent, profile, participant, channel, sandbox, and subagent metadata;
 - whether a memory provider is additive or exclusive;
 - hook latency and blocking guarantees.
+- whether the RushDB it targets embeds memories (RushDB Cloud's managed embeddings) or not (a standalone engine); without managed embeddings, pass the contract an `embedder` (`createOpenAICompatibleEmbedder`) and refuse to start without one.
 
 Pin and test against a concrete runtime version.
 

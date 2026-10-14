@@ -18,6 +18,8 @@ Inspect the host configuration and available tools without mutating them. Then c
 | MCP only       | Model-directed session, decision, task, entity, and preference memory | RushDB MCP tools                                 |
 | Custom harness | Application-controlled lifecycle memory                               | `@rushdb/agent-memory-contract` and a RushDB SDK |
 
+Recall is a vector search. On RushDB Cloud the platform embeds memories (managed embeddings); on a standalone RushDB engine nothing does, so the native integrations and `@rushdb/agent-memory-contract` need a configured embedding provider (`RUSHDB_EMBEDDING_*`, or the contract's `embedder`). When a standalone engine is configured without one, the integration stays disabled and reports why; relay that instead of storing memories that can never be recalled.
+
 Do not report memory as unavailable merely because MCP tools are absent when a native provider is active. Do not manually bootstrap a `SESSION` or mirror completed turns when a native provider already owns lifecycle capture.
 
 Read [integration-modes.md](references/integration-modes.md) when choosing or configuring a mode. Read [host-capabilities.md](references/host-capabilities.md) for OpenClaw and Hermes behavior.

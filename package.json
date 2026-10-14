@@ -28,10 +28,24 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rush-db/rushdb"
+    "url": "git+https://github.com/rush-db/skills.git"
   },
-  "homepage": "https://rushdb.com",
+  "homepage": "https://github.com/rush-db/skills#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "bugs": "https://github.com/rush-db/skills/issues",
+  "packageManager": "pnpm@10.1.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "test": "node scripts/validate-skills.mjs",
+    "pack:check": "npm pack --dry-run",
+    "release": "pnpm test && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10"
   }
 }

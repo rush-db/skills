@@ -1,6 +1,6 @@
 # RushDB SearchQuery — Complete Reference
 
-> Ported from `packages/mcp-server/searchQuerySpec.ts`. Load this file before calling `findRecords` with dates, aggregation, groupBy, relationship traversal, or vector search.
+> Ported from `searchQuerySpec.ts` in the `rush-db/mcp-server` repo. Load this file before calling `findRecords` with dates, aggregation, groupBy, relationship traversal, or vector search.
 
 ---
 

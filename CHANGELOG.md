@@ -1,5 +1,18 @@
 # @rushdb/skills
 
+## 2.12.1
+
+### Patch Changes
+
+- 1877e3d: The skills describe RushDB Cloud and a standalone engine: use only the tools the MCP server lists,
+  `vectorSearch` takes a `queryVector` on a standalone engine, and agent memory there needs an
+  embedding provider.
+- 1877e3d: Embedding indexes have names. A name is unique within a project, defaults to
+  `<label>.<property>.<model>.<dimensions>.<similarity>`, and is returned when indexes are listed.
+  Search (`index`), inline vectors (`index`), stats, vector upsert and delete accept an index's name
+  as well as its id. The dashboard asks for the name in a second step when creating an index,
+  prefilled with the default.
+
 ## 2.12.0
 
 ### Minor Changes
@@ -66,15 +79,19 @@
 
   ```ts
   db.records.find({
-    labels: ['EMPLOYEE'],
+    labels: ["EMPLOYEE"],
     where: {
       EMPLOYEE: {
-        $alias: '$manager',
-        $relation: { type: 'REPORTS_TO', direction: 'out', hops: { min: 1, max: 4 } },
-        name: { $contains: 'Alice' }
-      }
-    }
-  })
+        $alias: "$manager",
+        $relation: {
+          type: "REPORTS_TO",
+          direction: "out",
+          hops: { min: 1, max: 4 },
+        },
+        name: { $contains: "Alice" },
+      },
+    },
+  });
   ```
 
   `hops` accepts an exact count (`hops: 3`) or a range (`{ min?, max? }`, `min` defaults to 1). `type` and `direction` apply to every hop; the nested label and its criteria constrain only the endpoint record. Omitting `type` traverses any relationship — RushDB's internal property metadata edges are automatically excluded, so untyped traversal never leaves the user's data model.
@@ -83,11 +100,15 @@
 
   ```ts
   db.records.find({
-    labels: ['ACCOUNT'],
+    labels: ["ACCOUNT"],
     where: {
-      $cycle: { type: 'TRANSFERRED_TO', direction: 'out', hops: { min: 2, max: 6 } }
-    }
-  })
+      $cycle: {
+        type: "TRANSFERRED_TO",
+        direction: "out",
+        hops: { min: 2, max: 6 },
+      },
+    },
+  });
   ```
 
   `$cycle` is a record-level predicate: its value is the traversal spec itself (`type`, `direction`, `hops` — `hops` mandatory, `min` ≥ 2, defaulting to 2). A cycle has no separate endpoint, so it accepts no `$alias`, no property criteria, and no nested labels. Combine with `$not` to select records not on a cycle.

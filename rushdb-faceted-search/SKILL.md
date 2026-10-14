@@ -184,7 +184,7 @@ import RushDB from '@rushdb/javascript-sdk'
 // npm install @rushdb/javascript-sdk
 
 const db = new RushDB(process.env.RUSHDB_API_KEY!)
-// Self-hosted: new RushDB(key, { url: 'https://your-host/api/v1' })
+// Self-hosted engine: new RushDB(engineToken, { direct: true, engineUrl: 'http://127.0.0.1:3000' })
 ```
 
 **Python**
@@ -194,7 +194,7 @@ from rushdb import RushDB
 # pip install rushdb
 
 db = RushDB(api_key=os.environ["RUSHDB_API_KEY"])
-# Self-hosted: RushDB(api_key=key, base_url="https://your-host/api/v1")
+# Self-hosted engine: RushDB(engine_token, direct=True, engine_url="http://127.0.0.1:3000")
 ```
 
 ### 1. Load schema on mount

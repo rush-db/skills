@@ -1,5 +1,11 @@
 # @rushdb/skills
 
+## 3.0.1
+
+### Patch Changes
+
+- ae8a01f: Expand the LMPG acronym in the published documentation.
+
 ## 3.0.0
 
 ### Major Changes

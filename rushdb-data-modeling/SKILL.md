@@ -5,7 +5,7 @@ description: Model data in RushDB's property-centric LMPG graph. Use when design
 
 # RushDB Data Modeling
 
-RushDB uses the **LMPG** (Labels, Multi-Properties, Graph) model — a property-centric graph where every node (record) has a label, a set of typed properties, and can be connected to other records via named relationships.
+RushDB uses the **Labeled Meta-Property Graph (LMPG)** model — a property-centric graph where every node (record) has a label, a set of typed properties, and can be connected to other records via named relationships.
 
 **Core insight**: you don't define a schema upfront. You push JSON, and RushDB infers structure. Labels and properties emerge from your data. Schema discovery happens via `getSchemaMarkdown`.
 

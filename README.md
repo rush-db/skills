@@ -89,7 +89,7 @@ Guides contributors through building native RushDB memory support for another ag
 
 ### `rushdb-data-modeling`
 
-Teaches RushDB's property-centric LMPG (Labels, Multi-Properties, Graph) model: label naming conventions, property types, relationship design, how nested JSON auto-creates relationships on import, and schema evolution patterns.
+Teaches RushDB's property-centric Labeled Meta-Property Graph (LMPG) model: label naming conventions, property types, relationship design, how nested JSON auto-creates relationships on import, and schema evolution patterns.
 
 **Triggers when an agent needs to:**
 

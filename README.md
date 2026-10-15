@@ -23,7 +23,7 @@ npm install @rushdb/skills
 ## RushDB Cloud or a standalone engine
 
 The skills work with both. The RushDB MCP server and SDKs connect either to RushDB Cloud (an API key)
-or to a standalone RushDB engine (`rushdbd`). Against a standalone engine, natural-language search,
+or to a standalone RushDB engine (`rushdb`). Against a standalone engine, natural-language search,
 relationship-pattern suggestions and managed embeddings are not available: vector search takes a
 `queryVector`, and agent memory needs an embedding provider. The skills tell the agent to use only the
 tools the server lists.

@@ -1,5 +1,11 @@
 # @rushdb/skills
 
+## 3.0.2
+
+### Patch Changes
+
+- 80270f3: Refer to the self-hosted engine binary as `rushdb` in the README.
+
 ## 3.0.1
 
 ### Patch Changes

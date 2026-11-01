@@ -1,5 +1,11 @@
 # @rushdb/skills
 
+## 3.0.3
+
+### Patch Changes
+
+- 1aa718c: Docs and package metadata only: the README, description and keywords use RushDB's current wording, and the README has a compatibility table. No code changes.
+
 ## 3.0.2
 
 ### Patch Changes

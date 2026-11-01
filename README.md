@@ -35,7 +35,7 @@ tools the server lists.
 | [`rushdb-query-builder`](#rushdb-query-builder)     | Discovery-first workflow, SearchQuery syntax, aggregation, relationship traversal                                            |
 | [`rushdb-agent-memory`](#rushdb-agent-memory)       | Route memory across native providers, MCP, and custom harnesses without duplicate writes                                     |
 | [`rushdb-memory-adapter`](#rushdb-memory-adapter)   | Build and validate lifecycle-aware RushDB integrations for agent runtimes                                                    |
-| [`rushdb-data-modeling`](#rushdb-data-modeling)     | LMPG model, label/property/relationship design, nested JSON import                                                           |
+| [`rushdb-data-modeling`](#rushdb-data-modeling)     | Records, properties and relationships: label/property/relationship design, nested JSON import                                |
 | [`rushdb-faceted-search`](#rushdb-faceted-search)   | Build faceted filter UIs — discover properties, enumerate values, map to widgets, assemble `where`                           |
 | [`rushdb-domain-template`](#rushdb-domain-template) | Design a tailored schema for any domain through guided conversation — interview → labels + relationships + bootstrap payload |
 
@@ -59,7 +59,7 @@ Includes a bundled reference file (`references/search-query-spec.md`) with the c
 
 ### `rushdb-agent-memory`
 
-Teaches how to select and operate the correct RushDB memory layer: native OpenClaw/Hermes lifecycle integration, native + MCP, MCP only, or a custom harness. It routes each read and write to one owner, enforces canonical scope boundaries, and prevents duplicate turn persistence.
+Teaches how to select and operate the correct RushDB agent-memory integration: native OpenClaw/Hermes lifecycle integration, native + MCP, MCP only, or a custom harness. It routes each read and write to one owner, enforces canonical scope boundaries, and prevents duplicate turn persistence.
 
 Includes references for integration-mode selection, AgentMemoryEvent v1, host capabilities, and operational/domain memory patterns.
 
@@ -89,7 +89,7 @@ Guides contributors through building native RushDB memory support for another ag
 
 ### `rushdb-data-modeling`
 
-Teaches RushDB's property-centric Labeled Meta-Property Graph (LMPG) model: label naming conventions, property types, relationship design, how nested JSON auto-creates relationships on import, and schema evolution patterns.
+Teaches RushDB's data model (records, properties as first-class values, and relationships between records): label naming conventions, property types, relationship design, how nested JSON auto-creates relationships on import, and schema evolution patterns.
 
 **Triggers when an agent needs to:**
 
@@ -119,7 +119,7 @@ Covers the eager/lazy loading split, context-aware vs. original value enumeratio
 
 ### `rushdb-domain-template`
 
-Guides users through designing a tailored RushDB schema via a structured interview (5 questions), then outputs a schema summary, a ready-to-run `bulkCreateRecords` bootstrap payload, and starter queries. Includes compact template cards for 10 common domains (e-commerce, SaaS/DevOps, CRM, healthcare, fintech, content, agent memory, project management, scientific research, and product management) — all adapted to RushDB's record-centric LMPG model.
+Guides users through designing a tailored RushDB schema via a structured interview (5 questions), then outputs a schema summary, a ready-to-run `bulkCreateRecords` bootstrap payload, and starter queries. Includes compact template cards for 10 common domains (e-commerce, SaaS/DevOps, CRM, healthcare, fintech, content, agent memory, project management, scientific research, and product management) — all adapted to RushDB's record-centric data model.
 
 **Triggers when a user:**
 

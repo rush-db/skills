@@ -1,17 +1,17 @@
 ---
 name: rushdb-data-modeling
-description: Model data in RushDB's property-centric LMPG graph. Use when designing or evolving schemas, choosing labels and properties, defining relationships, importing nested JSON, structuring a new use case, or modeling agent memory with EPISODE, MEMORY_FACT, domain records, scope fields, semantic properties, and fact supersession.
+description: Model data in RushDB as records, properties and relationships. Use when designing or evolving schemas, choosing labels and properties, defining relationships, importing nested JSON, structuring a new use case, or modeling agent memory with EPISODE, MEMORY_FACT, domain records, scope fields, semantic properties, and fact supersession.
 ---
 
 # RushDB Data Modeling
 
-RushDB uses the **Labeled Meta-Property Graph (LMPG)** model — a property-centric graph where every node (record) has a label, a set of typed properties, and can be connected to other records via named relationships.
+RushDB stores **records**, **properties** and **relationships**. Every record has a label and a set of typed properties, and can be connected to other records via named relationships. Properties are first-class values: RushDB tracks each property's name and type across all records, which is what schema discovery returns.
 
 **Core insight**: you don't define a schema upfront. You push JSON, and RushDB infers structure. Labels and properties emerge from your data. Schema discovery happens via `getSchemaMarkdown`.
 
 ---
 
-## The LMPG Model
+## The Data Model
 
 | Concept    | RushDB term      | Description                                                     |
 | ---------- | ---------------- | --------------------------------------------------------------- |

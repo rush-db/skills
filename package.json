@@ -1,6 +1,6 @@
 {
   "name": "@rushdb/skills",
-  "description": "Agent Skills for RushDB — teach AI agents to query, model data, and use RushDB as persistent memory",
+  "description": "Agent skills for RushDB, the database for AI: querying, data modeling and agent memory",
   "keywords": [
     "agentskills",
     "agent-skills",

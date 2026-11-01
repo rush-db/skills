@@ -134,7 +134,7 @@ Guides users through designing a tailored RushDB schema via a structured intervi
 
 Each skill follows the [Agent Skills](https://agentskills.io) format:
 
-```
+```text
 skills/<skill-name>/
 ├── SKILL.md          # Required: YAML frontmatter + instructions
 ├── agents/           # Optional product-facing metadata

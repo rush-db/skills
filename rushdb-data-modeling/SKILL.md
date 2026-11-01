@@ -73,11 +73,11 @@ Use a single label per record type. Model state with a `status` property, not se
 
 ### Property Discovery
 
-```
-getSchemaMarkdown()         → all labels + all properties + value ranges
+```text
+getSchemaMarkdown()                   → all labels + all properties + value ranges
 findProperties({ labels: ["USER"] })  → detailed property list for a label
-getSchema()                 → same as above but structured JSON with propertyId values
-propertyValues(propertyId)    → distinct values / min-max for a property
+getSchema()                           → same as above but structured JSON with propertyId values
+propertyValues(propertyId)            → distinct values / min-max for a property
 ```
 
 ---
@@ -123,7 +123,7 @@ No schema declaration. No migration. Just push the JSON.
 
 ### Manual Relationship Management
 
-```
+```text
 attachRelation({ sourceId, targetId, type: "AUTHORED" })
 detachRelation({ sourceId, targetId, type: "AUTHORED" })
 findRelationships({ source: { where: { $id: "record-id" } } })

@@ -144,6 +144,7 @@ findRecords({
 | `bulkDeleteRecords`                 | **Destructive batch** — always preview with `findRecords` first |
 | `attachRelation`                    | Create a relationship between two records                       |
 | `detachRelation`                    | Remove a relationship                                           |
+| `updateRelation`                    | Change or remove properties on existing relationships; `types: { since: 'datetime' }` stores an ISO string as a datetime (RushDB 3.0.4+) |
 
 ---
 

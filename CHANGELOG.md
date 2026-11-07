@@ -1,5 +1,11 @@
 # @rushdb/skills
 
+## 3.0.4
+
+### Patch Changes
+
+- 08e7c98: The query builder skill lists the `updateRelation` MCP tool, which changes or removes properties on existing relationships and stores datetimes through `types`.
+
 ## 3.0.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 ---
 name: rushdb-faceted-search
-description: Build faceted filter UIs on top of RushDB. Use this skill when generating code for filter sidebars, multi-select facets, range sliders, or any UI that lets users narrow a record set by property values. Covers the full flow: discover properties + types, enumerate distinct values, map each type to the right widget, and assemble the live where clause as filters change.
+description: "Build faceted filter UIs on top of RushDB. Use this skill when generating code for filter sidebars, multi-select facets, range sliders, or any UI that lets users narrow a record set by property values. Covers the full flow: discover properties + types, enumerate distinct values, map each type to the right widget, and assemble the live where clause as filters change."
 homepage: https://rushdb.com
 ---
 

@@ -1,5 +1,11 @@
 # @rushdb/skills
 
+## 3.0.5
+
+### Patch Changes
+
+- 5c57d5b: Quote the `rushdb-faceted-search` description in its front matter. It contains `: `, so strict YAML parsers rejected the unquoted value.
+
 ## 3.0.4
 
 ### Patch Changes
